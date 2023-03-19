@@ -1,0 +1,145 @@
+body {
+    
+    background-image: linear-gradient(to right, #0b486b, #f56217);
+    
+  }
+
+h1{
+    font-family: oswald;
+    font-size: 40px;
+     font-weight: 500;
+     text-transform: uppercase;
+     line-height: 1;
+    
+    
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.App-header {
+    background-image: rgba(0, 0, 0, 0.5);
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow: visible;
+    width: 70%;
+    text-align: center;
+    color: black;
+    margin: 20px auto;
+}
+
+.Messages-list {
+    background-image: linear-gradient(to right, #0b486b, #f56217);
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px 0;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+    flex-grow: 1;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.Messages-message {
+    display: flex;
+    margin-top: 10px;
+}
+
+.Messages-message.currentMember {
+    /*justify-content: flex-end;*/
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.Message-content {
+    display: inline-block;
+}
+
+.currentMember > .Message-content {
+    align-items: flex-end;
+}
+
+.Messages-message > .avatar {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin: 0 10px -10px;
+}
+
+.Message-content > .username {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 4px;
+}
+
+.Message-content > .text {
+    padding: 10px;
+    max-width: 400px;
+    margin: 0;
+    border-radius: 12px;
+    background-color: cornflowerblue;
+    color: white;
+    display: inline-block;
+}
+
+.currentMember > .Message-content .text {
+    background-color: goldenrod;
+    color: black;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+input {
+    background-color: rgb(164, 205, 219);
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 3px solid black;
+    flex-grow: 0.5;
+    margin: 5px;
+}
+input:focus {
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1650bb;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px #999;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #1650bb;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
