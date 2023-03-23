@@ -1,6 +1,6 @@
 body {
     
-    background-image: linear-gradient(to right, #0b486b, #f56217);
+    background-image: linear-gradient(to right, #1f1c2c, #928dab);
     
   }
 
@@ -22,7 +22,7 @@ h1{
 
 .App-header {
     background-image: rgba(0, 0, 0, 0.5);
-    border: 3px solid black;
+    /*border: 3px solid black;*/
     border-radius: 10px;
     overflow: visible;
     width: 70%;
@@ -32,7 +32,7 @@ h1{
 }
 
 .Messages-list {
-    background-image: linear-gradient(to right, #0b486b, #f56217);
+    background-image: linear-gradient(to right, #1f1c2c, #928dab);
     border: 3px solid black;
     border-radius: 10px;
     padding: 20px 0;
@@ -85,13 +85,14 @@ h1{
     max-width: 400px;
     margin: 0;
     border-radius: 12px;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #9EC4C5;
+    color: black;
     display: inline-block;
+    word-break: break-all;
 }
 
 .currentMember > .Message-content .text {
-    background-color: goldenrod;
+    background-color: #fca0a0;
     color: black;
 }
 
