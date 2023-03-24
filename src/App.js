@@ -56,6 +56,77 @@ function randomName() {
 function randomColor() {
     return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
 }
+function getRandomEmoji() {
+    const emojis = [
+        '🐀',
+        '🐁',
+        '🐭',
+        '🐹',
+        '🐂',
+        '🐃',
+        '🐄',
+        '🐮',
+        '🐅',
+        '🐆',
+        '🐯',
+        '🐇',
+        '🐐',
+        '🐑',
+        '🐏',
+        '🐴',
+        '🐎',
+        '🐱',
+        '🐈',
+        '🐰',
+        '🐓',
+        '🐔',
+        '🐤',
+        '🐣',
+        '🐥',
+        '🐦',
+        '🐧',
+        '🐘',
+        '🐩',
+        '🐕',
+        '🐷',
+        '🐖',
+        '🐗',
+        '🐫',
+        '🐪',
+        '🐶',
+        '🐺',
+        '🐻',
+        '🐨',
+        '🐼',
+        '🐵',
+        '🙈',
+        '🙉',
+        '🙊',
+        '🐒',
+        '🐉',
+        '🐲',
+        '🐊',
+        '🐍',
+        '🐢',
+        '🐸',
+        '🐋',
+        '🐳',
+        '🐬',
+        '🐙',
+        '🐟',
+        '🐠',
+        '🐡',
+        '🐚',
+        '🐌',
+        '🐛',
+        '🐜',
+        '🐝',
+        '🐞',
+    ];
+    const randomIndex = Math.floor(Math.random() * emojis.length);
+    return emojis[randomIndex];
+}
+
 class App extends Component {
     constructor() {
         super();
@@ -64,6 +135,7 @@ class App extends Component {
             member: {
                 username: randomName(),
                 color: randomColor(),
+                emoji: getRandomEmoji(),
             },
         };
 

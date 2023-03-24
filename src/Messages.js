@@ -1,78 +1,6 @@
 import React, { Component } from 'react';
 
-const emojis = [
-    '🐀',
-    '🐁',
-    '🐭',
-    '🐹',
-    '🐂',
-    '🐃',
-    '🐄',
-    '🐮',
-    '🐅',
-    '🐆',
-    '🐯',
-    '🐇',
-    '🐐',
-    '🐑',
-    '🐏',
-    '🐴',
-    '🐎',
-    '🐱',
-    '🐈',
-    '🐰',
-    '🐓',
-    '🐔',
-    '🐤',
-    '🐣',
-    '🐥',
-    '🐦',
-    '🐧',
-    '🐘',
-    '🐩',
-    '🐕',
-    '🐷',
-    '🐖',
-    '🐗',
-    '🐫',
-    '🐪',
-    '🐶',
-    '🐺',
-    '🐻',
-    '🐨',
-    '🐼',
-    '🐵',
-    '🙈',
-    '🙉',
-    '🙊',
-    '🐒',
-    '🐉',
-    '🐲',
-    '🐊',
-    '🐍',
-    '🐢',
-    '🐸',
-    '🐋',
-    '🐳',
-    '🐬',
-    '🐙',
-    '🐟',
-    '🐠',
-    '🐡',
-    '🐚',
-    '🐌',
-    '🐛',
-    '🐜',
-    '🐝',
-    '🐞',
-];
-
 class Messages extends Component {
-    getRandomEmoji() {
-        const randomIndex = Math.floor(Math.random() * emojis.length);
-        return emojis[randomIndex];
-    }
-
     render() {
         const { messages } = this.props;
         return (
@@ -91,14 +19,15 @@ class Messages extends Component {
         const className = messageFromMe
             ? 'Messages-message currentMember'
             : 'Messages-message';
-        const emoji = this.getRandomEmoji();
+        //const emoji = this.getRandomEmoji();
         return (
             <li className={className} key={index}>
                 <span className="avatar" />
                 <div className="Message-content">
                     <div className="username">
                         {member.clientData.username}
-                        {emoji}
+                        {member.clientData.emoji}
+                        {/*{emoji}*/}
                     </div>
                     <div className="text">{text}</div>
                 </div>
