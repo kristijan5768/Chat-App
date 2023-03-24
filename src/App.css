@@ -1,8 +1,5 @@
 body {
-    
-    background-image: linear-gradient(to right, #1f1c2c, rgb(146, 141, 171));
-
-  }
+}
 
 h1{
     font-family: oswald;
@@ -18,11 +15,12 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    background-image: url(./components/wp4410743.png);
 }
 
 .App-header {
-    background-image: rgba(0, 0, 0, 0.5);
-    /*border: 3px solid black;*/
+    background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+    border: 3px solid black;
     border-radius: 10px;
     overflow: visible;
     width: 70%;
@@ -32,7 +30,7 @@ h1{
 }
 
 .Messages-list {
-    background-image: linear-gradient(to right, #1f1c2c, #928dab);
+    background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
     /*border: 3px solid black;*/
     border-radius: 10px;
     padding: 20px 0;
@@ -95,10 +93,10 @@ h1{
     max-width: 400px;
     margin: 0;
     border-radius: 12px;
-    background-color: #9EC4C5;
+    background-color: #a2c59e;
     color: black;
     display: inline-block;
-    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .currentMember > .Message-content .text {
@@ -115,7 +113,7 @@ form {
 }
 
 input {
-    background-color: rgba(158, 157, 160, 0);
+    background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
     padding: 12px;
     font-size: 16px;
     color: black;

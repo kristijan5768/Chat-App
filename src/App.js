@@ -67,7 +67,7 @@ class App extends Component {
             },
         };
 
-        this.drone = new window.Scaledrone('qEFRDrM5AWLW0xhA', {
+        this.drone = new window.Scaledrone(process.env.REACT_APP_CHANNEL_ID, {
             data: this.state.member,
         });
     }
