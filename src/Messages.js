@@ -19,7 +19,7 @@ class Messages extends Component {
         const className = messageFromMe
             ? 'Messages-message currentMember'
             : 'Messages-message';
-        //const emoji = this.getRandomEmoji();
+
         return (
             <li className={className} key={index}>
                 <span className="avatar" />
@@ -27,7 +27,6 @@ class Messages extends Component {
                     <div className="username">
                         {member.clientData.username}
                         {member.clientData.emoji}
-                        {/*{emoji}*/}
                     </div>
                     <div className="text">{text}</div>
                 </div>
