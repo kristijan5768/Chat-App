@@ -1,52 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Input extends Component {
-    state = {
-        text: '',
-        charCount: 0,
-        showError: false,
-    };
+function Input(props) {
+    const [text, setText] = useState('');
+    const [charCount, setCharCount] = useState(0);
+    const [showError, setShowError] = useState(false);
 
-    onChange = (e) => {
+    const onChange = (e) => {
         const text = e.target.value;
         const charCount = text.length;
         const showError = charCount > 120;
-        this.setState({ text, charCount, showError });
+        setText(text);
+        setCharCount(charCount);
+        setShowError(showError);
     };
 
-    onSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        if (this.state.charCount <= 120) {
-            this.props.onSendMessage(this.state.text);
-            this.setState({ text: '', charCount: 0, showError: false });
+        if (charCount <= 120) {
+            props.onSendMessage(text);
+            setText('');
+            setCharCount(0);
+            setShowError(false);
         } else {
-            this.setState({ showError: true });
+            setShowError(true);
         }
     };
 
-    render() {
-        return (
-            <div className="Input">
-                <form onSubmit={this.onSubmit}>
-                    <input
-                        onChange={this.onChange}
-                        value={this.state.text}
-                        type="text"
-                        placeholder="Enter your message and press ENTER!"
-                        autoFocus={true}
-                        maxLength="121"
-                    />
-                    <button className="button">Send</button>
-                </form>
-                {this.state.showError && (
-                    <div className="error">
-                        Character limit exceeded!(Max. characters per message
-                        120)
-                    </div>
-                )}
-            </div>
-        );
-    }
+    return (
+        <div className="Input">
+            <form onSubmit={onSubmit}>
+                <input
+                    onChange={onChange}
+                    value={text}
+                    type="text"
+                    placeholder="Enter your message and press ENTER!"
+                    autoFocus={true}
+                    maxLength="121"
+                />
+                <button className="button">Send</button>
+            </form>
+            {showError && (
+                <div className="error">
+                    Character limit exceeded!(Max. characters per message 120)
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default Input;

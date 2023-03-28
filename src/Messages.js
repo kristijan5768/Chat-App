@@ -1,20 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Messages extends Component {
-    render() {
-        const { messages } = this.props;
-        return (
-            <ul className="Messages-list">
-                {messages.map((message, index) =>
-                    this.renderMessage(message, index)
-                )}
-            </ul>
-        );
-    }
-
-    renderMessage(message, index) {
+function Messages(props) {
+    const renderMessage = (message, index) => {
         const { member, text } = message;
-        const { currentMember } = this.props;
+        const { currentMember } = props;
         const messageFromMe = member.id === currentMember.id;
         const className = messageFromMe
             ? 'Messages-message currentMember'
@@ -32,7 +21,15 @@ class Messages extends Component {
                 </div>
             </li>
         );
-    }
+    };
+
+    const { messages } = props;
+
+    return (
+        <ul className="Messages-list">
+            {messages.map((message, index) => renderMessage(message, index))}
+        </ul>
+    );
 }
 
 export default Messages;
