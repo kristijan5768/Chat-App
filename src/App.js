@@ -54,7 +54,7 @@ class App extends Component {
 
     onSendMessage = (message) => {
         if (message.trim() === '') {
-            alert('Enter your message!!!');
+            alert('Enter your message!');
         } else {
             this.drone.publish({
                 room: 'observable-room',
