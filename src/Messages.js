@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollableFeed from 'react-scrollable-feed';
 
 function Messages(props) {
     const renderMessage = (message, index) => {
@@ -26,9 +27,13 @@ function Messages(props) {
     const { messages } = props;
 
     return (
-        <ul className="Messages-list">
-            {messages.map((message, index) => renderMessage(message, index))}
-        </ul>
+        <ScrollableFeed className="Messages-list">
+            <ul>
+                {messages.map((message, index) =>
+                    renderMessage(message, index)
+                )}
+            </ul>
+        </ScrollableFeed>
     );
 }
 
