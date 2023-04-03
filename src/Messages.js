@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollableFeed from 'react-scrollable-feed';
+import moment from 'moment';
+
+function useMessageTimestamps(messages) {
+    const [messageTimestamps, setMessageTimestamps] = useState({});
+
+    useEffect(() => {
+        messages.forEach((message, index) => {
+            if (!messageTimestamps[index]) {
+                setMessageTimestamps((prevState) => {
+                    return {
+                        ...prevState,
+                        [index]: moment(message.timestamp),
+                    };
+                });
+            }
+        });
+    }, [messages, messageTimestamps]);
+
+    return messageTimestamps;
+}
 
 function Messages(props) {
+    const messageTimestamps = useMessageTimestamps(props.messages);
+
     const renderMessage = (message, index) => {
-        const { member, text } = message;
+        const { member, text, timestamp } = message;
         const { currentMember } = props;
         const messageFromMe = member.id === currentMember.id;
         const className = messageFromMe
             ? 'Messages-message currentMember'
             : 'Messages-message';
+
+        const messageTime = messageTimestamps[index]
+            ? messageTimestamps[index].format('HH:mm:ss DD.MM')
+            : moment(timestamp).format('HH:mm:ss DD.MM');
 
         return (
             <li className={className} key={index}>
@@ -19,6 +45,7 @@ function Messages(props) {
                         {member.clientData.emoji}
                     </div>
                     <div className="text">{text}</div>
+                    <div className="timestamp">{messageTime}</div>
                 </div>
             </li>
         );

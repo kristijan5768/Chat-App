@@ -95,6 +95,13 @@ h1 {
     color: black;
 }
 
+.Message-content > .timestamp {
+
+    color: darkgray;
+    font-size: 10px;
+
+}
+
 form {
     display: flex;
     width: 100%;
