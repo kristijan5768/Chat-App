@@ -1,20 +1,20 @@
 h1 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 600;
     background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
   }
-.App {
+.Chat-App {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background-image: url(./assets/background.png);
+    background-image: url(./assets/background2.png);
 }
 
-.App-header {
+.Header {
     overflow: visible;
     width: 70%;
     text-align: center;
@@ -84,14 +84,14 @@ h1 {
     max-width: 400px;
     margin: 0;
     border-radius: 12px;
-    background-color: #a2c59e;
+    background-color: #63da56;
     color: black;
     display: inline-block;
     overflow-wrap: break-word;
 }
 
 .currentMember > .Message-content .text {
-    background-color: #fca0a0;
+    background-color: #007FFF;
     color: black;
 }
 

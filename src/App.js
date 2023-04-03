@@ -65,8 +65,8 @@ function App() {
         }
     };
     return (
-        <div className="App">
-            <div className="App-header">
+        <div className="Chat-App">
+            <div className="Header">
                 <h1 className="animate-character">CHAT APP</h1>
             </div>
             <div className="App-cross"></div>
