@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ScrollableFeed from 'react-scrollable-feed';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 function useMessageTimestamps(messages) {
     const [messageTimestamps, setMessageTimestamps] = useState({});
@@ -11,7 +11,7 @@ function useMessageTimestamps(messages) {
                 setMessageTimestamps((prevState) => {
                     return {
                         ...prevState,
-                        [index]: moment(message.timestamp),
+                        [index]: dayjs(message.timestamp),
                     };
                 });
             }
@@ -34,7 +34,7 @@ function Messages(props) {
 
         const messageTime = messageTimestamps[index]
             ? messageTimestamps[index].format('HH:mm:ss DD.MM')
-            : moment(timestamp).format('HH:mm:ss DD.MM');
+            : dayjs(timestamp).format('HH:mm:ss DD.MM');
 
         return (
             <li className={className} key={index}>
