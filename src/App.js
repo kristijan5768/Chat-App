@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Messages from './Messages';
-import Input from './input';
-import { firstName, lastName } from './components/names';
-import { emojis } from './components/emoji';
-
-function randomName() {
-    const firstNames = firstName[Math.floor(Math.random() * firstName.length)];
-    const lastNames = lastName[Math.floor(Math.random() * lastName.length)];
-    return firstNames + ' ' + lastNames;
-}
-function randomColor() {
-    return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
-}
-function getRandomEmoji() {
-    const randomIndex = Math.floor(Math.random() * emojis.length);
-    return emojis[randomIndex];
-}
+import Messages from './components/Messages';
+import Input from './components/Input';
+import randomName from './helper/randomName';
+import randomColor from './helper/randomColor';
+import randomEmoji from './helper/randomEmojis';
 function App() {
     const [messages, setMessages] = useState([]);
     const [drone, setDrone] = useState();
     const [member, setMember] = useState({
         username: randomName(),
         color: randomColor(),
-        emoji: getRandomEmoji(),
+        emoji: randomEmoji(),
     });
     useEffect(() => {
         if (member) {

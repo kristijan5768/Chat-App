@@ -129,7 +129,7 @@ input:focus::placeholder {
     color: transparent;
   }
 
-.button {
+  .button {
     display: inline-block;
     padding: 15px 25px;
     font-size: 20px;
