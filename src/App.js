@@ -5,6 +5,7 @@ import Input from './components/Input';
 import randomName from './helper/randomName';
 import randomColor from './helper/randomColor';
 import randomEmoji from './helper/randomEmojis';
+
 function App() {
     const [messages, setMessages] = useState([]);
     const [drone, setDrone] = useState();
