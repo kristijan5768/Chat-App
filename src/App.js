@@ -13,6 +13,7 @@ function App() {
         color: randomColor(),
         emoji: randomEmoji(),
     });
+
     useEffect(() => {
         if (member) {
             const drone = new window.Scaledrone(
@@ -24,6 +25,7 @@ function App() {
             setDrone(drone);
         }
     }, [member]);
+
     useEffect(() => {
         if (drone) {
             drone.on('open', (error) => {
@@ -42,6 +44,7 @@ function App() {
             });
         }
     }, [drone, member]);
+
     const onSendMessage = (message) => {
         if (message.trim() === '') {
             alert('Enter your message!!!');
@@ -52,6 +55,7 @@ function App() {
             });
         }
     };
+
     return (
         <div className="Chat-App">
             <div className="Header">
