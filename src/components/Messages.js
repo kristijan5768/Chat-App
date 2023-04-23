@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ScrollableFeed from 'react-scrollable-feed';
 import dayjs from 'dayjs';
 
