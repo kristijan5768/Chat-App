@@ -35,13 +35,14 @@ function Input(props) {
                     type="text"
                     placeholder="Enter your message and press ENTER!"
                     autoFocus={true}
-                    maxLength="121"
+                    maxLength="120"
                 />
+                <div className="char-count">{charCount}/120</div>
                 <button className="button">Send</button>
             </form>
             {showError && (
                 <div className="error">
-                    Character limit exceeded!(Max. characters per message 120)
+                    Character limit exceeded! (Max. characters per message: 120)
                 </div>
             )}
         </div>

@@ -160,3 +160,10 @@ input:focus::placeholder {
     text-align: center;
   }
 
+  .char-count {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+  }
+  
